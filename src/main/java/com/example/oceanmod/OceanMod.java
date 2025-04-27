@@ -31,6 +31,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import com.example.oceanmod.entity.ModEntityTypes;
 import com.example.oceanmod.event.ModEventBusEvents;
+import com.example.oceanmod.block.AirstoneBlock;
 // import com.example.oceanmod.worldgen.ModBiomes;
 
 
@@ -85,6 +86,10 @@ public class OceanMod
     public static final RegistryObject<Block> PEARL_LIGHT2_BLOCK = BLOCKS.register("pearl_light2", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).mapColor(MapColor.STONE).strength(0.3f).sound(SoundType.GLASS).noOcclusion().isRedstoneConductor((state, world, pos) -> false).lightLevel(state -> 12)));
     // Pearl Light2 item
     public static final RegistryObject<Item> PEARL_LIGHT2_BLOCK_ITEM = ITEMS.register("pearl_light2", () -> new BlockItem(PEARL_LIGHT2_BLOCK.get(), new Item.Properties()));
+    // Airstone block
+    public static final RegistryObject<Block> AIRSTONE_BLOCK = BLOCKS.register("airstone", () -> new AirstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5f)));
+    // Airstone item
+    public static final RegistryObject<Item> AIRSTONE_BLOCK_ITEM = ITEMS.register("airstone", () -> new BlockItem(AIRSTONE_BLOCK.get(), new Item.Properties()));
 
     // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
     // public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
@@ -104,6 +109,7 @@ public class OceanMod
                 output.accept(LIGHT_LEAF_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT2_BLOCK_ITEM.get());
+                output.accept(AIRSTONE_BLOCK_ITEM.get());
             }).build());
 
     public OceanMod(FMLJavaModLoadingContext context)
