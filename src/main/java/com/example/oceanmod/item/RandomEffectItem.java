@@ -22,23 +22,23 @@ public class RandomEffectItem extends Item {
 
             // Good effects
             MobEffectInstance[] goodEffects = new MobEffectInstance[]{
-                new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0),
-                new MobEffectInstance(MobEffects.REGENERATION, 200, 0),
-                new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0),
-                new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0),
-                new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0)
+                new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0),
+                new MobEffectInstance(MobEffects.REGENERATION, 400, 0),
+                new MobEffectInstance(MobEffects.DAMAGE_BOOST, 400, 0),
+                new MobEffectInstance(MobEffects.WATER_BREATHING, 400, 0),
+                new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0)
             };
 
             // Bad effects
             MobEffectInstance[] badEffects = new MobEffectInstance[]{
-                new MobEffectInstance(MobEffects.POISON, 200, 0),
-                new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1),
-                new MobEffectInstance(MobEffects.WEAKNESS, 200, 0),
-                new MobEffectInstance(MobEffects.CONFUSION, 200, 0) // Nausea effect
+                new MobEffectInstance(MobEffects.POISON, 400, 0),
+                new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 400, 1),
+                new MobEffectInstance(MobEffects.WEAKNESS, 400, 0),
+                new MobEffectInstance(MobEffects.CONFUSION, 400, 0) // Nausea effect
             };
 
-            // 70% chance good, 30% chance bad
-            if (random.nextFloat() < 0.7f) {
+            // 60% chance good, 40% chance bad
+            if (random.nextFloat() < 0.6f) {
                 MobEffectInstance effect = goodEffects[random.nextInt(goodEffects.length)];
                 entity.addEffect(effect);
             } else {
