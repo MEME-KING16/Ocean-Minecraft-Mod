@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "I",
+      "I",
+      "S"
+    ],
+    "key": {
+      "I": {
+        "item": "oceanmod:rusted_ingot"
+      },
+      "P": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "oceanmod:rusted_metal_sword"
+    }
+  }
+  
