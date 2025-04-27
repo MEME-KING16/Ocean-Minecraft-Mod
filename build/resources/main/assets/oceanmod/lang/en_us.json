@@ -10,5 +10,7 @@
     "block.oceanmod.pearl_light2":"Pearl Light 2",
     "block.oceanmod.airstone":"Airstone",
     "item.oceanmod.mystery_meat":"Mystery Meat",
-    "item.oceanmodvocal_cords":"[WIP] Vocal Cords"
+    "item.oceanmod_vocal_cords":"[WIP] Vocal Cords",
+    "itemGroup.oceanmod.oceanmod_blocks": "Ocean Mod Blocks",
+    "itemGroup.oceanmod.oceanmod_items": "Ocean Mod Items"
 }
