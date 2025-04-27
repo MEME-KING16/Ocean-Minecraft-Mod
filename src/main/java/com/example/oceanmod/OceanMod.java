@@ -31,6 +31,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import com.example.oceanmod.entity.ModEntityTypes;
 import com.example.oceanmod.event.ModEventBusEvents;
+import com.example.oceanmod.block.AirstoneBlock;
 // import com.example.oceanmod.worldgen.ModBiomes;
 
 
@@ -86,7 +87,7 @@ public class OceanMod
     // Pearl Light2 item
     public static final RegistryObject<Item> PEARL_LIGHT2_BLOCK_ITEM = ITEMS.register("pearl_light2", () -> new BlockItem(PEARL_LIGHT2_BLOCK.get(), new Item.Properties()));
     // Airstone block
-    public static final RegistryObject<Block> AIRSTONE_BLOCK = BLOCKS.register("airstone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5f)));
+    public static final RegistryObject<Block> AIRSTONE_BLOCK = BLOCKS.register("airstone", () -> new AirstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5f)));
     // Airstone item
     public static final RegistryObject<Item> AIRSTONE_BLOCK_ITEM = ITEMS.register("airstone", () -> new BlockItem(AIRSTONE_BLOCK.get(), new Item.Properties()));
 
@@ -108,6 +109,7 @@ public class OceanMod
                 output.accept(LIGHT_LEAF_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT2_BLOCK_ITEM.get());
+                output.accept(AIRSTONE_BLOCK_ITEM.get());
             }).build());
 
     public OceanMod(FMLJavaModLoadingContext context)
