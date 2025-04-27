@@ -94,6 +94,8 @@ public class OceanMod
     // Mystery Meat
     public static final RegistryObject<Item> MYSTERY_MEAT = ITEMS.register("mystery_meat", () -> new RandomEffectItem(new Item.Properties().food(new FoodProperties.Builder()
              .alwaysEat().nutrition(1).saturationMod(1f).build())));
+    // Vocal Cords
+    public static final RegistryObject<Item> VOCAL_CORDS = ITEMS.register("vocal_cords", () -> new Item(new Item.Properties()));
 
     // Creates a creative tab with the id "oceanmod:oceanmod_blocks" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_BLOCKS = CREATIVE_MODE_TABS.register("oceanmod_blocks", () -> CreativeModeTab.builder()
@@ -118,6 +120,7 @@ public class OceanMod
             .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(MYSTERY_MEAT.get());
+                output.accept(VOCAL_CORDS.get());
             }).build());
 
     public OceanMod(FMLJavaModLoadingContext context)
