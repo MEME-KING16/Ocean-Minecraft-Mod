@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "P",
+      "P"
+    ],
+    "key": {
+      "P": {
+        "item": "oceanmod:sinker_planks"
+      }
+    },
+    "result": {
+      "item": "minecraft:stick",
+      "count": 4
+    }
+  }
+  
