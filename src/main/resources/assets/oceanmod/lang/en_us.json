@@ -8,5 +8,6 @@
     "block.oceanmod.light_leaf":"Leaf Light",
     "block.oceanmod.pearl_light":"Pearl Light",
     "block.oceanmod.pearl_light2":"Pearl Light 2",
-    "block.oceanmod.airstone":"Airstone"
+    "block.oceanmod.airstone":"Airstone",
+    "item.oceanmod.mystery_meat":"Mystery Meat"
 }

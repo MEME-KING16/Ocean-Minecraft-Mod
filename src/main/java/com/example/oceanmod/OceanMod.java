@@ -32,6 +32,7 @@ import org.slf4j.Logger;
 import com.example.oceanmod.entity.ModEntityTypes;
 import com.example.oceanmod.event.ModEventBusEvents;
 import com.example.oceanmod.block.AirstoneBlock;
+import com.example.oceanmod.item.RandomEffectItem;
 // import com.example.oceanmod.worldgen.ModBiomes;
 
 
@@ -90,13 +91,12 @@ public class OceanMod
     public static final RegistryObject<Block> AIRSTONE_BLOCK = BLOCKS.register("airstone", () -> new AirstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5f)));
     // Airstone item
     public static final RegistryObject<Item> AIRSTONE_BLOCK_ITEM = ITEMS.register("airstone", () -> new BlockItem(AIRSTONE_BLOCK.get(), new Item.Properties()));
+    // Mystery Meat
+    public static final RegistryObject<Item> MYSTERY_MEAT = ITEMS.register("mystery_meat", () -> new RandomEffectItem(new Item.Properties().food(new FoodProperties.Builder()
+             .alwaysEat().nutrition(1).saturationMod(1f).build())));
 
-    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
-    // public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-    //         .alwaysEat().nutrition(1).saturationMod(2f).build())));
-
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    // Creates a creative tab with the id "oceanmod:oceanmod_blocks" for the example item, that is placed after the combat tab
+    public static final RegistryObject<CreativeModeTab> OCEANMOD_BLOCKS = CREATIVE_MODE_TABS.register("oceanmod_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
@@ -110,6 +110,14 @@ public class OceanMod
                 output.accept(PEARL_LIGHT_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT2_BLOCK_ITEM.get());
                 output.accept(AIRSTONE_BLOCK_ITEM.get());
+            }).build());
+
+    // Creates a creative tab with the id "oceanmod:oceanmod_items" for the example item, that is placed after the combat tab
+    public static final RegistryObject<CreativeModeTab> OCEANMOD_ITEMS = CREATIVE_MODE_TABS.register("oceanmod_items", () -> CreativeModeTab.builder()
+            .withTabsBefore(OCEANMOD_BLOCKS.getKey())
+            .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
+            .displayItems((parameters, output) -> {
+                output.accept(MYSTERY_MEAT.get());
             }).build());
 
     public OceanMod(FMLJavaModLoadingContext context)
