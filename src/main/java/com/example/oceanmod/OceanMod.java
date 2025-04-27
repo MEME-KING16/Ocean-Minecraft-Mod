@@ -99,8 +99,14 @@ public class OceanMod
              .alwaysEat().nutrition(1).saturationMod(1f).build())));
     // Vocal Cords
     public static final RegistryObject<Item> VOCAL_CORDS = ITEMS.register("vocal_cords", () -> new Item(new Item.Properties()));
-    // 
+    // Rusted Sword
     public static final RegistryObject<Item> RUSTED_METAL_SWORD = ITEMS.register("rusted_metal_sword", () -> new SwordItem(ModToolTiers.RUSTED, 3, -2.4f, new Item.Properties()));
+    // Rusted Ore block
+    public static final RegistryObject<Block> RUSTED_ORE_BLOCK = BLOCKS.register("rusted_ore", () -> new AirstoneBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(5f)));
+    // Rusted Ore item
+    public static final RegistryObject<Item> RUSTED_ORE_BLOCK_ITEM = ITEMS.register("rusted_ore", () -> new BlockItem(RUSTED_ORE_BLOCK.get(), new Item.Properties()));
+    // Rusted Ingot
+    public static final RegistryObject<Item> RUSTED_INGOT = ITEMS.register("rusted_ingot", () -> new Item(new Item.Properties()));
     // Creates a creative tab with the id "oceanmod:oceanmod_blocks" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_BLOCKS = CREATIVE_MODE_TABS.register("oceanmod_blocks", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.oceanmod.oceanmod_blocks"))
@@ -117,6 +123,7 @@ public class OceanMod
                 output.accept(PEARL_LIGHT_BLOCK_ITEM.get());
                 output.accept(PEARL_LIGHT2_BLOCK_ITEM.get());
                 output.accept(AIRSTONE_BLOCK_ITEM.get());
+                output.accept(RUSTED_ORE_BLOCK_ITEM.get());
             }).build());
 
     // Creates a creative tab with the id "oceanmod:oceanmod_items" for the example item, that is placed after the oceanmod_blocks tab
