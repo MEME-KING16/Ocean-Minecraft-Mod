@@ -9,6 +9,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -34,6 +35,7 @@ import com.example.oceanmod.entity.ModEntityTypes;
 import com.example.oceanmod.event.ModEventBusEvents;
 import com.example.oceanmod.block.AirstoneBlock;
 import com.example.oceanmod.item.RandomEffectItem;
+import com.example.oceanmod.item.ModToolTiers;
 // import com.example.oceanmod.worldgen.ModBiomes;
 
 
@@ -97,7 +99,8 @@ public class OceanMod
              .alwaysEat().nutrition(1).saturationMod(1f).build())));
     // Vocal Cords
     public static final RegistryObject<Item> VOCAL_CORDS = ITEMS.register("vocal_cords", () -> new Item(new Item.Properties()));
-
+    // 
+    public static final RegistryObject<Item> RUSTED_METAL_SWORD = ITEMS.register("rusted_metal_sword", () -> new SwordItem(ModToolTiers.RUSTED, 3, -2.4f, new Item.Properties()));
     // Creates a creative tab with the id "oceanmod:oceanmod_blocks" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_BLOCKS = CREATIVE_MODE_TABS.register("oceanmod_blocks", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.oceanmod.oceanmod_blocks"))
@@ -116,7 +119,7 @@ public class OceanMod
                 output.accept(AIRSTONE_BLOCK_ITEM.get());
             }).build());
 
-    // Creates a creative tab with the id "oceanmod:oceanmod_items" for the example item, that is placed after the combat tab
+    // Creates a creative tab with the id "oceanmod:oceanmod_items" for the example item, that is placed after the oceanmod_blocks tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_ITEMS = CREATIVE_MODE_TABS.register("oceanmod_items", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.oceanmod.oceanmod_items"))
             .withTabsBefore(OCEANMOD_BLOCKS.getKey())
@@ -124,6 +127,15 @@ public class OceanMod
             .displayItems((parameters, output) -> {
                 output.accept(MYSTERY_MEAT.get());
                 output.accept(VOCAL_CORDS.get());
+            }).build());
+
+    // Creates a creative tab with the id "oceanmod:oceanmod_weapons" for the example item, that is placed after the oceanmod_items tab
+    public static final RegistryObject<CreativeModeTab> OCEANMOD_WEAPONS = CREATIVE_MODE_TABS.register("oceanmod_weapons", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.oceanmod.oceanmod_weapons"))
+            .withTabsBefore(OCEANMOD_BLOCKS.getKey())
+            .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
+            .displayItems((parameters, output) -> {
+                output.accept(RUSTED_METAL_SWORD.get());
             }).build());
 
     public OceanMod(FMLJavaModLoadingContext context)
