@@ -14,6 +14,6 @@ public class GenericSmallFishRenderer extends MobRenderer<GenericSmallFishEntity
 
     @Override
     public ResourceLocation getTextureLocation(GenericSmallFishEntity entity) {
-        return new ResourceLocation(OceanMod.MOD_ID, "textures/entity/generic_small_fish.png");
+        return ResourceLocation.tryParse(OceanMod.MOD_ID + ":textures/entity/generic_small_fish.png");
     }
 }
