@@ -1,0 +1,12 @@
+{
+    "type":"minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "oceanmod:sinker_wood"
+        }
+    ],
+    "result": {
+        "item": "oceanmod:sinker_planks",
+        "count": 4
+    }
+}
