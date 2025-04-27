@@ -4,6 +4,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -99,6 +100,7 @@ public class OceanMod
 
     // Creates a creative tab with the id "oceanmod:oceanmod_blocks" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_BLOCKS = CREATIVE_MODE_TABS.register("oceanmod_blocks", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.oceanmod.oceanmod_blocks"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
@@ -116,6 +118,7 @@ public class OceanMod
 
     // Creates a creative tab with the id "oceanmod:oceanmod_items" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> OCEANMOD_ITEMS = CREATIVE_MODE_TABS.register("oceanmod_items", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.oceanmod.oceanmod_items"))
             .withTabsBefore(OCEANMOD_BLOCKS.getKey())
             .icon(() -> SINKER_WOOD_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
