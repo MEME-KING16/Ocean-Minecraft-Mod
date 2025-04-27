@@ -5,5 +5,7 @@
     "block.oceanmod.shale":"Shale",
     "block.oceanmod.sea_glass_green":"Green Sea Glass",
     "block.oceanmod.sea_glass_red":"Red Sea Glass",    
-    "block.oceanmod.light_leaf":"Leaf Light"    
+    "block.oceanmod.light_leaf":"Leaf Light",    
+    "block.oceanmod.pearl_light":"Pearl Light",    
+    "block.oceanmod.pearl_light2":"Pearl Light 2"    
 }
