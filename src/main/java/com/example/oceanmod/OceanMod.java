@@ -32,6 +32,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import com.example.oceanmod.entity.ModEntityTypes;
+import com.example.oceanmod.effect.ModEffects;
 import com.example.oceanmod.event.ModEventBusEvents;
 import com.example.oceanmod.block.AirstoneBlock;
 import com.example.oceanmod.item.RandomEffectItem;
@@ -163,7 +164,8 @@ public class OceanMod
         CREATIVE_MODE_TABS.register(modEventBus);
         // Register the biomes
         //ModBiomes.register();
-
+        // Register the effects
+        ModEffects.EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
